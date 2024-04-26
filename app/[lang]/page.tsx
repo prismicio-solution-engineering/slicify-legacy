@@ -5,6 +5,8 @@ import { getLanguages } from "@/utils/getLanguages";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 
+export const revalidate = 5;
+
 type PageParams = { lang: string };
 
 export async function generateMetadata({
