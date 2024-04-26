@@ -5,8 +5,9 @@ import { Container } from "@/components/Container";
 import { UnderlineDoodle } from "@/components/UnderlineDoodle";
 
 import backgroundImage from "@/images/background-features.jpg";
+import { Content } from "@prismicio/client";
 
-export default function HeroWithBlueBackground(slice) {
+export default function HeroWithBlueBackground({slice} : {slice : Content.HeroSliceWithBackground}) {
   return (
     <section id={slice.primary.anchor || undefined}>
       <div className="relative isolate overflow-hidden bg-black">
