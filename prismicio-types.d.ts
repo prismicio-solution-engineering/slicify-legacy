@@ -165,7 +165,7 @@ interface BlogArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogArticleDocumentDataSlicesSlice>
+  body: prismic.SliceZone<BlogArticleDocumentDataSlicesSlice>
   /**
    * Meta Title field in *Blog Article*
    *
@@ -333,7 +333,7 @@ interface BlogIndexDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogIndexDocumentDataSlicesSlice>
+  body: prismic.SliceZone<BlogIndexDocumentDataSlicesSlice>
   /**
    * Meta Title field in *Blog index*
    *
@@ -506,7 +506,7 @@ interface FooterDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
+  body: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
 }
 
 /**
@@ -669,7 +669,7 @@ interface HeaderDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HeaderDocumentDataSlicesSlice>
+  body: prismic.SliceZone<HeaderDocumentDataSlicesSlice>
   /**
    * Modal title field in *Header*
    *
@@ -758,7 +758,7 @@ interface HomePageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice>
+  body: prismic.SliceZone<HomePageDocumentDataSlicesSlice>
   /**
    * Meta Title field in *Home Page*
    *
@@ -906,7 +906,7 @@ interface LandingPageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<LandingPageDocumentDataSlicesSlice>
+  body: prismic.SliceZone<LandingPageDocumentDataSlicesSlice>
   /**
    * Meta Title field in *Landing Page*
    *
