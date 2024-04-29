@@ -49,7 +49,7 @@ export default async function BlogArticle({ params }: { params: PageParams }) {
     )
     .catch(() => notFound());
 
-    console.log(page)
+    // console.log(page)
   const languages = await getLanguages(page, client, locales);
 
   return (
