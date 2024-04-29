@@ -48,11 +48,6 @@ export const blogArticleGraphQuery = `
         ...blog_categoryFields
       }
     }
-    author {
-      ...on author {
-        ...authorFields
-      }
-    }
   }
 }
 `;

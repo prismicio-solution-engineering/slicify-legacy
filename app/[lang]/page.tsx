@@ -4,6 +4,7 @@ import { components } from "@/slices";
 import { getLanguages } from "@/utils/getLanguages";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
+import MarketingLayout from "@/components/MarketingLayout";
 
 export const revalidate = 5;
 
@@ -37,8 +38,8 @@ export default async function Page({
   const languages = await getLanguages(page, client, locales);
 
   return (
-    <>
-    <SliceZone slices={page.data.body} components={components} />
-    </>
+    <MarketingLayout languages={languages}>
+      <SliceZone slices={page.data.body} components={components} />
+    </MarketingLayout>
   );
 }

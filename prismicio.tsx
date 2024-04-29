@@ -11,6 +11,13 @@ const routes = [
   {
     type: "home_page",
     path: "/:lang/",
+  },
+  {
+    type: "blog_article",
+    resolvers: {
+      category: "category",
+    },
+    path: "/:lang/blog/:category?/:uid",
   }
 ];
 
