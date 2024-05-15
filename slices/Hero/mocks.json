@@ -1,0 +1,185 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Spend"
+						}
+					}
+				]
+			},
+			"descrition": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing sint ad esse pariatur velit eu cillum velit. Deserunt deserunt ea occaecat sunt minim. Laborum aliqua esse laboris velit anim ad et esse ut eu cupidatat anim."
+						}
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"value": "correct",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "replied",
+							"type": "Text"
+						}
+					],
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Secondary",
+							"type": "Select"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Toto"
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Primary"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "blueBackground",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "This is the blue background variation",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"descrition": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis consequat magna ut cillum ex magna id exercitation tempor. Ipsum non velit dolore esse qui veniam minim officia tempor laborum velit et laborum eiusmod."
+						}
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"value": "safe",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "studied",
+							"type": "Text"
+						}
+					],
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Primary",
+							"type": "Select"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "titleOnly",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Given"
+						}
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"value": "thumb",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

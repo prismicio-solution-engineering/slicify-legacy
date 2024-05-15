@@ -2,8 +2,10 @@ import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import { KeyTextField } from "@prismicio/client";
 import Link, { LinkProps } from "next/link";
+import config from "./slicemachine.config.json";
 
-export const repositoryName = "slicify-legacy"
+export const repositoryName = process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT ?
+process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT : config.repositoryName;
 
 // Update the routes array to match your project's route structure
 /** @type {prismic.ClientConfig['routes']} **/

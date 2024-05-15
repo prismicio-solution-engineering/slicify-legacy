@@ -1,10 +1,11 @@
 import { createClient } from "@/prismicio";
 import { SliceZone } from "@prismicio/react";
-import { components } from "@/slices";
 import { getLanguages } from "@/utils/getLanguages";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 import MarketingLayout from "@/components/MarketingLayout";
+import { components } from "@/slices";
+import { legacyComponents } from "@/slices/legacyIndex";
 
 export const revalidate = 5;
 
@@ -37,9 +38,10 @@ export default async function Page({
 
   const languages = await getLanguages(page, client, locales);
 
+  // console.log("PAGE", page.data)
   return (
     <MarketingLayout languages={languages}>
-      <SliceZone slices={page.data.body} components={components} />
+      <SliceZone slices={page.data.body} components={{...components, ...legacyComponents }} />
     </MarketingLayout>
   );
 }
