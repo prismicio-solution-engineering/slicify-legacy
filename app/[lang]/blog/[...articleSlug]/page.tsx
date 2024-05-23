@@ -1,13 +1,13 @@
 import { createClient } from "@/prismicio";
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
-import { components } from "@/slices/";
 import { blogArticleGraphQuery } from "@/utils/graphQueries";
 import { getLanguages } from "@/utils/getLanguages";
 import BlogLayout from "@/components/BlogLayout";
 import { notFound } from "next/navigation";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
+import Text from "@/slices/Text/Text";
 
 type PageParams = { articleSlug: string[]; lang: string };
 
@@ -54,7 +54,9 @@ export default async function BlogArticle({ params }: { params: PageParams }) {
 
   return (
     <BlogLayout languages={languages} page={page}>
-      <SliceZone slices={page.data.body} components={components} />
+      <SliceZone slices={page.data.body} components={{
+          text: Text,
+        }} />
     </BlogLayout>
   );
 }

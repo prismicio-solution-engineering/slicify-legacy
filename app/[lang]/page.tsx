@@ -1,10 +1,14 @@
 import { createClient } from "@/prismicio";
 import { SliceZone } from "@prismicio/react";
-import { components } from "@/slices";
 import { getLanguages } from "@/utils/getLanguages";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 import MarketingLayout from "@/components/MarketingLayout";
+import Hero from "@/slices/Hero/Hero";
+import HeroBlueBackground from "@/slices/Hero/HeroBlueBackground";
+import HeroTitleOnly from "@/slices/Hero/HeroTitleOnly";
+import TextHome from "@/slices/Text/TextHome";
+import FeaturedWebsitesList from "@/slices/FeaturedWebsitesList/FeaturedWebsitesList";
 
 export const revalidate = 5;
 
@@ -39,7 +43,16 @@ export default async function Page({
 
   return (
     <MarketingLayout languages={languages}>
-      <SliceZone slices={page.data.body} components={components} />
+      <SliceZone
+        slices={page.data.body}
+        components={{
+          hero: Hero,
+          heroBlueBackground: HeroBlueBackground,
+          heroTitleOnly: HeroTitleOnly,
+          featured_websites: FeaturedWebsitesList,
+          text: TextHome,
+        }}
+      />
     </MarketingLayout>
   );
 }
