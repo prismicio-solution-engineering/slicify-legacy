@@ -4,31 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Primary content in *Blog Article → Slice zone → Text → Primary*
- */
-export interface BlogArticleDocumentDataBodyTextSlicePrimary {
-  /**
-   * Text Section field in *Blog Article → Slice zone → Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].text.primary.text_section
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text_section: prismic.RichTextField;
-}
-
-/**
- * Slice for *Blog Article → Slice zone*
- */
-export type BlogArticleDocumentDataBodyTextSlice = prismic.Slice<
-  "text",
-  Simplify<BlogArticleDocumentDataBodyTextSlicePrimary>,
-  never
->;
-
-type BlogArticleDocumentDataBodySlice = BlogArticleDocumentDataBodyTextSlice;
+type BlogArticleDocumentDataBodySlice = TextSlice;
 
 /**
  * Item in *Blog Article → Social cards*
@@ -617,6 +593,48 @@ type HeroSliceVariation =
  */
 export type HeroSlice = prismic.SharedSlice<"Hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Text → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * Text Section field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Text.primary.text_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_section: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `Text`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSlice = prismic.SharedSlice<"Text", TextSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -629,7 +647,6 @@ declare module "@prismicio/client" {
     export type {
       BlogArticleDocument,
       BlogArticleDocumentData,
-      BlogArticleDocumentDataBodyTextSlicePrimary,
       BlogArticleDocumentDataBodySlice,
       BlogArticleDocumentDataSocialCardsItem,
       BlogCategoryDocument,
@@ -651,6 +668,10 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceBlueBackground,
       HeroSliceTitleOnly,
+      TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceVariation,
+      TextSliceDefault,
     };
   }
 }

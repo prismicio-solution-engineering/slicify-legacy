@@ -47,24 +47,8 @@
         "config": {
           "labels": null,
           "choices": {
-            "text": {
-              "type": "Slice",
-              "fieldset": "Text",
-              "description": "Text slice for article content",
-              "icon": "format_align_left",
-              "display": "list",
-              "non-repeat": {
-                "text_section": {
-                  "type": "StructuredText",
-                  "config": {
-                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                    "allowTargetBlank": true,
-                    "label": "Text Section",
-                    "labels": ["highlight", "inline code"]
-                  }
-                }
-              },
-              "repeat": {}
+            "Text": {
+              "type": "SharedSlice"
             }
           }
         }
