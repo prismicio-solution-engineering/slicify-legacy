@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 import Text from "@/slices/Text/Text";
+import HeroTitleOnly from "@/slices/Hero/HeroTitleOnly";
 
 type PageParams = { articleSlug: string[]; lang: string };
 
@@ -49,13 +50,13 @@ export default async function BlogArticle({ params }: { params: PageParams }) {
     )
     .catch(() => notFound());
 
-    // console.log(page)
   const languages = await getLanguages(page, client, locales);
 
   return (
     <BlogLayout languages={languages} page={page}>
       <SliceZone slices={page.data.body} components={{
           text: Text,
+          hero_title_only: HeroTitleOnly,
         }} />
     </BlogLayout>
   );
