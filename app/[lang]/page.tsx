@@ -4,11 +4,12 @@ import { getLanguages } from "@/utils/getLanguages";
 import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 import MarketingLayout from "@/components/MarketingLayout";
-import Hero from "@/slices/Hero/Hero";
 import HeroBlueBackground from "@/slices/Hero/HeroBlueBackground";
 import HeroTitleOnly from "@/slices/Hero/HeroTitleOnly";
 import TextHome from "@/slices/Text/TextHome";
 import FeaturedWebsitesList from "@/slices/FeaturedWebsitesList/FeaturedWebsitesList";
+import { components } from "@/slices/index";
+import { Hero as HeroDefault } from "@/slices/Hero/HeroDefault";
 
 export const revalidate = 5;
 
@@ -46,11 +47,12 @@ export default async function Page({
       <SliceZone
         slices={page.data.body}
         components={{
-          hero: Hero,
+          hero: HeroDefault,
           heroBlueBackground: HeroBlueBackground,
           heroTitleOnly: HeroTitleOnly,
           featured_websites: FeaturedWebsitesList,
           text: TextHome,
+          ...components,
         }}
       />
     </MarketingLayout>

@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { UnderlineDoodle } from "@/components/UnderlineDoodle";
 import { Content } from "@prismicio/client";
 
-export default function HeroTitleOnly({slice} : {slice : Content.HeroSliceTitleOnly}) {
+export default function HeroTitleOnly({slice} : {slice : Content.HeroSliceHeroTitleOnly}) {
   return (
     <section id={slice.primary.anchor || undefined}>
       <Container className="pb-16 pt-20 text-center lg:pt-32">

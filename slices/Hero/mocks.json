@@ -1,0 +1,170 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Slices made simple for all businesses !",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"descrition": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum officia velit velit cupidatat anim pariatur aliquip pariatur sit sit quis ad. Mollit nostrud veniam deserunt ea Lorem id voluptate in dolore aliquip sunt proident officia commodo."
+						}
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "hero"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io"
+							}
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Primary"
+						}
+					],
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "heroTitleOnly",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Slices made simple for all businesses !",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "hero-title"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "heroBlueBackground",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Slices made simple for all businesses !",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"descrition": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum officia velit velit cupidatat anim pariatur aliquip pariatur sit sit quis ad. Mollit nostrud veniam deserunt ea Lorem id voluptate in dolore aliquip sunt proident officia commodo.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"anchor": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "hero-blue"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "More information"
+						}
+					],
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Primary",
+							"type": "Select"
+						}
+					]
+				]
+			}
+		]
+	}
+]

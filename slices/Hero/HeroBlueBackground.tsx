@@ -7,7 +7,7 @@ import { UnderlineDoodle } from "@/components/UnderlineDoodle";
 import backgroundImage from "@/images/background-features.jpg";
 import { Content } from "@prismicio/client";
 
-export default function HeroWithBlueBackground({slice} : {slice : Content.HeroSliceWithBackground}) {
+export default function HeroWithBlueBackground({slice} : {slice : Content.HeroSliceHeroBlueBackground}) {
   return (
     <section id={slice.primary.anchor || undefined}>
       <div className="relative isolate overflow-hidden bg-black">
@@ -42,7 +42,7 @@ export default function HeroWithBlueBackground({slice} : {slice : Content.HeroSl
             }}
           />
           <PrismicRichText
-            field={slice.primary.description}
+            field={slice.primary.descrition}
             components={{
               paragraph: ({ children }) => (
                 <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-white">

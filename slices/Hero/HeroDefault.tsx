@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import { UnderlineDoodle } from "@/components/UnderlineDoodle";
 import { Content } from "@prismicio/client";
 
-export default function Hero({ slice }: { slice: Content.HeroSliceDefault }) {
+export function Hero({ slice }: { slice: Content.HeroSliceDefault }) {
   return (
     <section id={slice.primary.anchor || undefined}>
       <Container className="pb-16 pt-20 text-center lg:pt-32">
@@ -30,7 +30,7 @@ export default function Hero({ slice }: { slice: Content.HeroSliceDefault }) {
         />
         <>
           <PrismicRichText
-            field={slice.primary.description}
+            field={slice.primary.descrition}
             components={{
               paragraph: ({ children }) => (
                 <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">

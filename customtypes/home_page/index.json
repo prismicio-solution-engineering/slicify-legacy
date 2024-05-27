@@ -1,0 +1,147 @@
+{
+  "id": "home_page",
+  "label": "Home page",
+  "repeatable": false,
+  "json": {
+    "Main": {
+      "body": {
+        "type": "Slices",
+        "fieldset": "Slice zone",
+        "config": {
+          "labels": {},
+          "choices": {
+            "featured_websites": {
+              "type": "Slice",
+              "fieldset": "Featured Websites",
+              "description": "Featured Websites List",
+              "icon": "apps",
+              "display": "list",
+              "non-repeat": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading2",
+                    "label": "Title"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description"
+                  }
+                },
+                "anchor": {
+                  "type": "Text",
+                  "config": {
+                    "label": "anchor"
+                  }
+                }
+              },
+              "repeat": {
+                "website": {
+                  "type": "IntegrationFields",
+                  "config": {
+                    "catalog": "slicify-legacy--prismic_websites",
+                    "label": "Website",
+                    "placeholder": "Select Prismic showcased website"
+                  }
+                }
+              }
+            },
+            "text": {
+              "type": "Slice",
+              "fieldset": "Text",
+              "description": "Text slice for article content",
+              "icon": "format_align_left",
+              "display": "list",
+              "non-repeat": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading2",
+                    "label": "Title"
+                  }
+                },
+                "text_section": {
+                  "type": "StructuredText",
+                  "config": {
+                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                    "allowTargetBlank": true,
+                    "label": "Text Section"
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1440,
+                      "height": 600
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "Hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta title"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description"
+        }
+      },
+      "canonical_link": {
+        "type": "Link",
+        "config": {
+          "label": "Canonical link",
+          "select": null
+        }
+      },
+      "social_cards": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "social_card_title": {
+              "type": "Text",
+              "config": {
+                "label": "Social card title"
+              }
+            },
+            "social_card_description": {
+              "type": "Text",
+              "config": {
+                "label": "Social card description"
+              }
+            },
+            "social_card_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Social card image"
+              }
+            }
+          },
+          "label": "Social cards"
+        }
+      }
+    }
+  },
+  "status": true,
+  "format": "custom"
+}
