@@ -357,54 +357,10 @@ export type HomePageDocumentDataBodyFeaturedWebsitesSlice = prismic.Slice<
   Simplify<HomePageDocumentDataBodyFeaturedWebsitesSliceItem>
 >;
 
-/**
- * Primary content in *Home page → Slice zone → Text → Primary*
- */
-export interface HomePageDocumentDataBodyTextSlicePrimary {
-  /**
-   * Title field in *Home page → Slice zone → Text → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Text Section field in *Home page → Slice zone → Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].text.primary.text_section
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text_section: prismic.RichTextField;
-
-  /**
-   * Image field in *Home page → Slice zone → Text → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].text.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Slice for *Home page → Slice zone*
- */
-export type HomePageDocumentDataBodyTextSlice = prismic.Slice<
-  "text",
-  Simplify<HomePageDocumentDataBodyTextSlicePrimary>,
-  never
->;
-
 type HomePageDocumentDataBodySlice =
   | HomePageDocumentDataBodyFeaturedWebsitesSlice
-  | HomePageDocumentDataBodyTextSlice
-  | HeroSlice;
+  | HeroSlice
+  | TextSlice;
 
 /**
  * Item in *Home page → Social cards*
@@ -743,6 +699,68 @@ type HeroSliceVariation =
  */
 export type HeroSlice = prismic.SharedSlice<"Hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Text → Default → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * Title field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Text.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Text Section field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Text.default.primary.text_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_section: prismic.RichTextField;
+
+  /**
+   * Image field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: Text.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `Text`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSlice = prismic.SharedSlice<"Text", TextSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -766,7 +784,6 @@ declare module "@prismicio/client" {
       HomePageDocumentData,
       HomePageDocumentDataBodyFeaturedWebsitesSlicePrimary,
       HomePageDocumentDataBodyFeaturedWebsitesSliceItem,
-      HomePageDocumentDataBodyTextSlicePrimary,
       HomePageDocumentDataBodySlice,
       HomePageDocumentDataSocialCardsItem,
       AllDocumentTypes,
@@ -780,6 +797,10 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceHeroTitleOnly,
       HeroSliceHeroBlueBackground,
+      TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceVariation,
+      TextSliceDefault,
     };
   }
 }

@@ -5,7 +5,7 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { PrismicNextImage } from "@prismicio/next";
 
-export default function Text({ slice }: { slice: Content.TextSliceDefault }) {
+export default function TextHome({ slice }: { slice: Content.TextSliceDefault }) {
   return (
     <div className="relative bg-light-blue px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
       <div className="absolute inset-0 overflow-hidden">

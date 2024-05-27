@@ -6,10 +6,10 @@ import { Metadata } from "next";
 import MarketingLayout from "@/components/MarketingLayout";
 import HeroBlueBackground from "@/slices/Hero/HeroBlueBackground";
 import HeroTitleOnly from "@/slices/Hero/HeroTitleOnly";
-import TextHome from "@/slices/Text/TextHome";
 import FeaturedWebsitesList from "@/slices/FeaturedWebsitesList/FeaturedWebsitesList";
 import { components } from "@/slices/index";
 import { Hero as HeroDefault } from "@/slices/Hero/HeroDefault";
+import TextHome from "@/slices/Text/TextHome";
 
 export const revalidate = 5;
 
