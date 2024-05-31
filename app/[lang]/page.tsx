@@ -46,14 +46,7 @@ export default async function Page({
     <MarketingLayout languages={languages}>
       <SliceZone
         slices={page.data.body}
-        components={{
-          hero: HeroDefault,
-          heroBlueBackground: HeroBlueBackground,
-          heroTitleOnly: HeroTitleOnly,
-          featured_websites: FeaturedWebsitesList,
-          text: TextHome,
-          ...components,
-        }}
+        components={components}
       />
     </MarketingLayout>
   );

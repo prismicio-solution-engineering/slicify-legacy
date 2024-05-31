@@ -4,112 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Primary content in *Blog Article → Slice zone → Text → Primary*
- */
-export interface BlogArticleDocumentDataBodyTextSlicePrimary {
-  /**
-   * Text Section field in *Blog Article → Slice zone → Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].text.primary.text_section
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text_section: prismic.RichTextField;
-}
-
-/**
- * Slice for *Blog Article → Slice zone*
- */
-export type BlogArticleDocumentDataBodyTextSlice = prismic.Slice<
-  "text",
-  Simplify<BlogArticleDocumentDataBodyTextSlicePrimary>,
-  never
->;
-
-/**
- * Primary content in *Blog Article → Slice zone → Hero Title Only → Primary*
- */
-export interface BlogArticleDocumentDataBodyHeroTitleOnlySlicePrimary {
-  /**
-   * TItle field in *Blog Article → Slice zone → Hero Title Only → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Descrition field in *Blog Article → Slice zone → Hero Title Only → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.primary.descrition
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  descrition: prismic.RichTextField;
-
-  /**
-   * anchor field in *Blog Article → Slice zone → Hero Title Only → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.primary.anchor
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  anchor: prismic.KeyTextField;
-}
-
-/**
- * Item content in *Blog Article → Slice zone → Hero Title Only → Items*
- */
-export interface BlogArticleDocumentDataBodyHeroTitleOnlySliceItem {
-  /**
-   * Cta label field in *Blog Article → Slice zone → Hero Title Only → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.items.cta_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_label: prismic.KeyTextField;
-
-  /**
-   * Cta link field in *Blog Article → Slice zone → Hero Title Only → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.items.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_link: prismic.LinkField;
-
-  /**
-   * Cta type field in *Blog Article → Slice zone → Hero Title Only → Items*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_article.body[].hero_title_only.items.cta_type
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  cta_type: prismic.SelectField<"Primary" | "Secondary" | "Text">;
-}
-
-/**
- * Slice for *Blog Article → Slice zone*
- */
-export type BlogArticleDocumentDataBodyHeroTitleOnlySlice = prismic.Slice<
-  "hero_title_only",
-  Simplify<BlogArticleDocumentDataBodyHeroTitleOnlySlicePrimary>,
-  Simplify<BlogArticleDocumentDataBodyHeroTitleOnlySliceItem>
->;
-
-type BlogArticleDocumentDataBodySlice =
-  | BlogArticleDocumentDataBodyTextSlice
-  | BlogArticleDocumentDataBodyHeroTitleOnlySlice;
+type BlogArticleDocumentDataBodySlice = HeroSlice | BlogContentSlice;
 
 /**
  * Item in *Blog Article → Social cards*
@@ -195,7 +90,7 @@ interface BlogArticleDocumentData {
   category: prismic.ContentRelationshipField<"blog_category">;
 
   /**
-   * Slice zone field in *Blog Article*
+   * Slice Zone field in *Blog Article*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -298,69 +193,10 @@ export type BlogCategoryDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Primary content in *Home page → Slice zone → Featured Websites → Primary*
- */
-export interface HomePageDocumentDataBodyFeaturedWebsitesSlicePrimary {
-  /**
-   * Title field in *Home page → Slice zone → Featured Websites → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].featured_websites.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Description field in *Home page → Slice zone → Featured Websites → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].featured_websites.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * anchor field in *Home page → Slice zone → Featured Websites → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_page.body[].featured_websites.primary.anchor
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  anchor: prismic.KeyTextField;
-}
-
-/**
- * Item content in *Home page → Slice zone → Featured Websites → Items*
- */
-export interface HomePageDocumentDataBodyFeaturedWebsitesSliceItem {
-  /**
-   * Website field in *Home page → Slice zone → Featured Websites → Items*
-   *
-   * - **Field Type**: Integration Fields (Catalog: `slicify-legacy--prismic_websites`)
-   * - **Placeholder**: Select Prismic showcased website
-   * - **API ID Path**: home_page.body[].featured_websites.items.website
-   * - **Documentation**: https://prismic.io/docs/field#integration
-   */
-  website: prismic.IntegrationField;
-}
-
-/**
- * Slice for *Home page → Slice zone*
- */
-export type HomePageDocumentDataBodyFeaturedWebsitesSlice = prismic.Slice<
-  "featured_websites",
-  Simplify<HomePageDocumentDataBodyFeaturedWebsitesSlicePrimary>,
-  Simplify<HomePageDocumentDataBodyFeaturedWebsitesSliceItem>
->;
-
 type HomePageDocumentDataBodySlice =
-  | HomePageDocumentDataBodyFeaturedWebsitesSlice
   | HeroSlice
-  | TextSlice;
+  | TextSlice
+  | FeaturedWebsitesSlice;
 
 /**
  * Item in *Home page → Social cards*
@@ -402,7 +238,7 @@ export interface HomePageDocumentDataSocialCardsItem {
  */
 interface HomePageDocumentData {
   /**
-   * Slice zone field in *Home page*
+   * Slice Zone field in *Home page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -477,6 +313,131 @@ export type AllDocumentTypes =
   | BlogArticleDocument
   | BlogCategoryDocument
   | HomePageDocument;
+
+/**
+ * Primary content in *BlogContent → Default → Primary*
+ */
+export interface BlogContentSliceDefaultPrimary {
+  /**
+   * Text Section field in *BlogContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: BlogContent.default.primary.text_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_section: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BlogContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogContent*
+ */
+type BlogContentSliceVariation = BlogContentSliceDefault;
+
+/**
+ * BlogContent Shared Slice
+ *
+ * - **API ID**: `BlogContent`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogContentSlice = prismic.SharedSlice<
+  "BlogContent",
+  BlogContentSliceVariation
+>;
+
+/**
+ * Primary content in *FeaturedWebsites → Default → Primary*
+ */
+export interface FeaturedWebsitesSliceDefaultPrimary {
+  /**
+   * Title field in *FeaturedWebsites → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: FeaturedWebsites.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *FeaturedWebsites → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: FeaturedWebsites.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * anchor field in *FeaturedWebsites → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: FeaturedWebsites.default.primary.anchor
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  anchor: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FeaturedWebsites → Items*
+ */
+export interface FeaturedWebsitesSliceDefaultItem {
+  /**
+   * Website field in *FeaturedWebsites → Items*
+   *
+   * - **Field Type**: Integration Fields (Catalog: `slicify-legacy--prismic_websites`)
+   * - **Placeholder**: Select Prismic showcased website
+   * - **API ID Path**: FeaturedWebsites.items[].website
+   * - **Documentation**: https://prismic.io/docs/field#integration
+   */
+  website: prismic.IntegrationField;
+}
+
+/**
+ * Default variation for FeaturedWebsites Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedWebsitesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedWebsitesSliceDefaultPrimary>,
+  Simplify<FeaturedWebsitesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FeaturedWebsites*
+ */
+type FeaturedWebsitesSliceVariation = FeaturedWebsitesSliceDefault;
+
+/**
+ * FeaturedWebsites Shared Slice
+ *
+ * - **API ID**: `FeaturedWebsites`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedWebsitesSlice = prismic.SharedSlice<
+  "FeaturedWebsites",
+  FeaturedWebsitesSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -773,20 +734,24 @@ declare module "@prismicio/client" {
     export type {
       BlogArticleDocument,
       BlogArticleDocumentData,
-      BlogArticleDocumentDataBodyTextSlicePrimary,
-      BlogArticleDocumentDataBodyHeroTitleOnlySlicePrimary,
-      BlogArticleDocumentDataBodyHeroTitleOnlySliceItem,
       BlogArticleDocumentDataBodySlice,
       BlogArticleDocumentDataSocialCardsItem,
       BlogCategoryDocument,
       BlogCategoryDocumentData,
       HomePageDocument,
       HomePageDocumentData,
-      HomePageDocumentDataBodyFeaturedWebsitesSlicePrimary,
-      HomePageDocumentDataBodyFeaturedWebsitesSliceItem,
       HomePageDocumentDataBodySlice,
       HomePageDocumentDataSocialCardsItem,
       AllDocumentTypes,
+      BlogContentSlice,
+      BlogContentSliceDefaultPrimary,
+      BlogContentSliceVariation,
+      BlogContentSliceDefault,
+      FeaturedWebsitesSlice,
+      FeaturedWebsitesSliceDefaultPrimary,
+      FeaturedWebsitesSliceDefaultItem,
+      FeaturedWebsitesSliceVariation,
+      FeaturedWebsitesSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,

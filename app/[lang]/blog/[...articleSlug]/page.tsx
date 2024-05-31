@@ -9,6 +9,7 @@ import { getLocales } from "@/utils/getLocales";
 import { Metadata } from "next";
 import Text from "@/slices/Text/Text";
 import HeroTitleOnly from "@/slices/Hero/HeroTitleOnly";
+import { components } from "@/slices";
 
 type PageParams = { articleSlug: string[]; lang: string };
 
@@ -54,10 +55,7 @@ export default async function BlogArticle({ params }: { params: PageParams }) {
 
   return (
     <BlogLayout languages={languages} page={page}>
-      <SliceZone slices={page.data.body} components={{
-          text: Text,
-          hero_title_only: HeroTitleOnly,
-        }} />
+      <SliceZone slices={page.data.body} components={components} />
     </BlogLayout>
   );
 }

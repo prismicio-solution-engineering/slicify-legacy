@@ -5,7 +5,8 @@
   "legacyPaths": {
     "home_page::body::hero": "default",
     "home_page::body::heroTitleOnly": "heroTitleOnly",
-    "home_page::body::heroBlueBackground": "heroBlueBackground"
+    "home_page::body::heroBlueBackground": "heroBlueBackground",
+    "blog_article::body::hero_title_only": "default"
   },
   "variations": [
     {

@@ -2,57 +2,22 @@
   "id": "home_page",
   "label": "Home page",
   "repeatable": false,
+  "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "body": {
         "type": "Slices",
-        "fieldset": "Slice zone",
+        "fieldset": "Slice Zone",
         "config": {
-          "labels": {},
           "choices": {
-            "featured_websites": {
-              "type": "Slice",
-              "fieldset": "Featured Websites",
-              "description": "Featured Websites List",
-              "icon": "apps",
-              "display": "list",
-              "non-repeat": {
-                "title": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "heading2",
-                    "label": "Title"
-                  }
-                },
-                "description": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "paragraph",
-                    "label": "Description"
-                  }
-                },
-                "anchor": {
-                  "type": "Text",
-                  "config": {
-                    "label": "anchor"
-                  }
-                }
-              },
-              "repeat": {
-                "website": {
-                  "type": "IntegrationFields",
-                  "config": {
-                    "catalog": "slicify-legacy--prismic_websites",
-                    "label": "Website",
-                    "placeholder": "Select Prismic showcased website"
-                  }
-                }
-              }
-            },
             "Hero": {
               "type": "SharedSlice"
             },
             "Text": {
+              "type": "SharedSlice"
+            },
+            "FeaturedWebsites": {
               "type": "SharedSlice"
             }
           }
@@ -108,7 +73,5 @@
         }
       }
     }
-  },
-  "status": true,
-  "format": "custom"
+  }
 }

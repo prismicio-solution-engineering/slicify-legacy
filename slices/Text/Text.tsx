@@ -7,7 +7,7 @@ import {
 
 import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-export default function Text({ slice }: {slice : Content.TextSliceDefault}) {
+export default function Text({ slice }: {slice : Content.BlogContentSliceDefault}) {
   return (
     <section className="max-w-4xl px-6 mx-auto flex flex-col gap-4">
       <PrismicRichText

@@ -1,0 +1,212 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text_section": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Lorem ipsum dolor sit amet",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+							"spans": [
+								{
+									"type": "label",
+									"start": 0,
+									"end": 11,
+									"data": "highlight"
+								},
+								{
+									"type": "label",
+									"start": 51,
+									"end": 61,
+									"data": "inline code"
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Euismod quis viverra nibh cras pulvinar mattis nunc.",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 52
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": " Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Risus quis varius quam quisque id diam vel quam elementum.",
+							"spans": [
+								{
+									"type": "em",
+									"start": 8,
+									"end": 20
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "preformatted",
+						"content": {
+							"text": "// This is some code",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Nec ultrices dui sapien eget mi proin sed.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Libero enim sed faucibus turpis. ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Massa tincidunt dui ut ornare lectus. Cursus eget nunc scelerisque viverra mauris in.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading5",
+						"content": {
+							"text": "Mattis enim ut tellus elementum sagittis vitae et.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Vestibulum morbi",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "blandit cursus",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "risus at ultrices mi.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pellentesque elit eget gravida cum sociis natoque penatibus.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "o-list-item",
+						"content": {
+							"text": "Consectetur purus",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "o-list-item",
+						"content": {
+							"text": "ut faucibus",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "o-list-item",
+						"content": {
+							"text": "pulvinar elementum.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Pellentesque habitant morbi tristique senectus et. Libero id faucibus nisl tincidunt eget.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Faucibus et molestie ac feugiat sed lectus vestibulum. Dictumst quisque sagittis purus sit amet. Euismod in pellentesque massa placerat. Elementum integer enim neque volutpat ac tincidunt vitae semper. Vitae suscipit tellus mauris a diam maecenas sed enim ut. Sit amet venenatis urna cursus eget nunc scelerisque. Vulputate ut pharetra sit amet. Tortor at auctor urna nunc id cursus metus. Neque gravida in fermentum et sollicitudin. Tempus quam pellentesque nec nam aliquam sem et.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Justo eget magna fermentum iaculis eu. Sit amet dictum sit amet justo. Ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque. Diam phasellus vestibulum lorem sed. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Sit amet tellus cras adipiscing enim eu turpis. In vitae turpis massa sed elementum tempus egestas sed. In cursus turpis massa tincidunt dui ut ornare lectus. Malesuada pellentesque elit eget gravida cum sociis natoque. Habitasse platea dictumst quisque sagittis purus sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Eget duis at tellus at urna condimentum mattis pellentesque. Viverra nibh cras pulvinar mattis. Condimentum lacinia quis vel eros donec ac odio tempor.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

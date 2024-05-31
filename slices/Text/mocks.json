@@ -27,22 +27,23 @@
 			},
 			"image": {
 				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMXx8Y29tcHV0ZXJ8ZW58MHx8fHwxNzE3MDkyMzkxfDA&ixlib=rb-4.0.3&q=85&rect=0%2C534%2C4272%2C1780&w=1440&h=600",
+				"alt": "grayscale photo of person using MacBook",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
-					"width": 3199,
-					"height": 3199
+					"id": "_UeY8aTI6d0",
+					"url": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMXx8Y29tcHV0ZXJ8ZW58MHx8fHwxNzE3MDkyMzkxfDA&ixlib=rb-4.0.3&q=85",
+					"width": 4272,
+					"height": 2848
 				},
-				"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?rect=0%2C933%2C3199%2C1333&w=1440&h=600",
 				"width": 1440,
 				"height": 600,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
-						"y": 933
-					},
-					"background": "transparent"
+						"y": 534
+					}
 				},
 				"thumbnails": {}
 			}

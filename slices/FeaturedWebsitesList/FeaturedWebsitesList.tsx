@@ -23,18 +23,12 @@ export type Website = {
 };
 
 /**
- * Props for `FeaturedWebsitesList`.
- */
-export type FeaturedWebsitesListProps =
-  SliceComponentProps<Content.FeaturedWebsitesListSlice>;
-
-/**
  * Component for "FeaturedWebsitesList" Slices.
  */
 const FeaturedWebsitesList = async ({
   slice,
 }: {
-  slice: Content.FeaturedWebsitesListSliceDefault;
+  slice: Content.FeaturedWebsitesSliceDefault;
 }) => {
   const websiteList: Website[] = slice.items.map(
     (website) =>

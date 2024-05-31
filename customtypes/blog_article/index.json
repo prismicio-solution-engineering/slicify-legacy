@@ -2,6 +2,8 @@
   "id": "blog_article",
   "label": "Blog Article",
   "repeatable": true,
+  "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "uid": {
@@ -43,81 +45,14 @@
       },
       "body": {
         "type": "Slices",
-        "fieldset": "Slice zone",
+        "fieldset": "Slice Zone",
         "config": {
-          "labels": {},
           "choices": {
-            "text": {
-              "type": "Slice",
-              "fieldset": "Text",
-              "description": "Text slice for article content",
-              "icon": "format_align_left",
-              "display": "list",
-              "non-repeat": {
-                "text_section": {
-                  "type": "StructuredText",
-                  "config": {
-                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                    "allowTargetBlank": true,
-                    "label": "Text Section",
-                    "labels": ["highlight", "inline code"]
-                  }
-                }
-              },
-              "repeat": {}
+            "Hero": {
+              "type": "SharedSlice"
             },
-            "hero_title_only": {
-              "type": "Slice",
-              "fieldset": "Hero Title Only",
-              "description": "hero banner title only",
-              "icon": "account_balance",
-              "display": "list",
-              "non-repeat": {
-                "title": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "heading1",
-                    "label": "TItle"
-                  }
-                },
-                "descrition": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "paragraph,strong,hyperlink",
-                    "allowTargetBlank": true,
-                    "label": "Descrition"
-                  }
-                },
-                "anchor": {
-                  "type": "Text",
-                  "config": {
-                    "label": "anchor"
-                  }
-                }
-              },
-              "repeat": {
-                "cta_label": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Cta label"
-                  }
-                },
-                "cta_link": {
-                  "type": "Link",
-                  "config": {
-                    "allowTargetBlank": true,
-                    "label": "Cta link",
-                    "select": null
-                  }
-                },
-                "cta_type": {
-                  "type": "Select",
-                  "config": {
-                    "options": ["Primary", "Secondary", "Text"],
-                    "label": "Cta type"
-                  }
-                }
-              }
+            "BlogContent": {
+              "type": "SharedSlice"
             }
           }
         }
@@ -172,7 +107,5 @@
         }
       }
     }
-  },
-  "status": true,
-  "format": "custom"
+  }
 }

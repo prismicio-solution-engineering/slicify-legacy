@@ -1,5 +1,5 @@
 {
-  "repositoryName": "slicify-legacy-dev",
+  "repositoryName": "slicify-legacy",
   "adapter": "@slicemachine/adapter-next",
   "libraries": ["./slices"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
